@@ -1,0 +1,23 @@
+/* Fuente y colores base */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #0b0c10;
+  color: #c5c6c7;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
+.hero {
+  background: linear-gradient(to bottom right, #1f2833, #0b0c10);
+}
+
+/* Efectos de tarjeta */
+.member-card {
+  transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+  transform: scale(1.05);
+}

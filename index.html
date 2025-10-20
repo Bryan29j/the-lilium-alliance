@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lilium Alliance</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=cinzel:400,700|roboto:400,500" rel="stylesheet" />
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+  <!-- Header (cargado dinámicamente) -->
+  <div id="header-partial" data-include="partials/header.html"></div>
+
+  <!-- Hero -->
+  <section class="hero text-center py-16 text-white">
+    <h2 class="text-4xl font-bold mb-4">Bienvenido al Gremio</h2>
+    <p class="max-w-xl mx-auto">Unidad, estrategia y honor. En Sword of Convallaria, forjamos la victoria juntos.</p>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="p-8 bg-gray-800 text-center">
+    <h3 class="text-2xl font-bold mb-4 text-emerald-400">Sobre el Gremio</h3>
+    <p class="max-w-2xl mx-auto">Somos una comunidad dedicada al juego Sword of Convallaria, donde el trabajo en equipo
+      y la amistad son nuestras mejores armas.</p>
+  </section>
+
+  <!-- Members -->
+  <section id="members" class="flex-1 p-8">
+    <h3 class="text-2xl font-bold text-center mb-8 text-emerald-400">Miembros del Gremio</h3>
+    <!-- ahora 4 columnas en md+ -->
+    <div id="member-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"></div>
+
+    <!-- contenedor para la paginación -->
+    <div id="pagination" class="mt-8 flex items-center justify-center space-x-2"></div>
+  </section>
+
+  <!-- Footer (cargado dinámicamente) -->
+  <div id="footer-partial" data-include="partials/footer.html"></div>
+
+  <!-- Script para cargar partials -->
+  <script src="js/partials.js"></script>
+  <!-- Script principal -->
+  <script src="js/main.js"></script>
+
+  <!-- Nuevo: asegurar scroll al fragmento si existe (p. ej. al venir desde /members/) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (location.hash) {
+        // pequeño delay para permitir que el layout/partials se apliquen
+        setTimeout(() => {
+          try {
+            const target = document.querySelector(location.hash);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          } catch (e) {
+            // silencioso en caso de selector inválido
+            console.warn('No se pudo desplazar al fragmento:', location.hash, e);
+          }
+        }, 80);
+      }
+    });
+  </script>
+</body>
+
+</html>

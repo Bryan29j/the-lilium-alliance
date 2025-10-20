@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lilium Alliance</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=cinzel:400,700|roboto:400,500" rel="stylesheet" />
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <!-- Header (cargado dinámicamente) -->
+  <div id="header-partial" data-include="../partials/header.html"></div>
+  <main class="flex-1 flex flex-col items-center justify-center my-10">
+    <div id="profile" class="w-full flex justify-center"></div>
+  </main>
+  <!-- Footer (cargado dinámicamente) -->
+  <div id="footer-partial" data-include="../partials/footer.html"></div>
+
+  <!-- Script para cargar partials -->
+  <script src="../js/partials.js"></script>
+
+  <!-- Script para cargar los perfiles -->
+  <script src="../js/profile.js"></script>
+
+</body>
+
+</html>
